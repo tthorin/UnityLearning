@@ -34,10 +34,17 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButtonDown("Crouch")) crouch = true;
         else if (Input.GetButtonUp("Crouch")) crouch = false;
-        if (horizontalMove > 0 || horizontalMove < 0) animator.SetBool("IsMoving", true);
+        //if (horizontalMove > 0 || horizontalMove < 0) animator.SetBool("IsMoving", true);
+        if(Input.GetButton("Horizontal")) animator.SetBool("IsMoving", true);
         else animator.SetBool("IsMoving", false);
-        bool isJumping = body.velocity.y > 0;
-        animator.SetBool("IsJumping", isJumping);
+        
+        
+        if (Input.GetButton("Fire1")) animator.SetTrigger("Attack");
+        if (Input.GetButtonUp("Fire1")) animator.ResetTrigger("Attack");
+    }
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 
     private void FixedUpdate()
