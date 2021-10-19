@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: -8459899417263920596}
   - component: {fileID: 5638639930850921671}
   - component: {fileID: 35270588780158481}
+  - component: {fileID: -8653594482732004510}
   m_Layer: 0
-  m_Name: Orc_1
+  m_Name: Orc_prefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,3 +196,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527eda2da7a139f4eb590957b4ba0b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  isFlipped: 0
+--- !u!114 &-8653594482732004510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4996008695221391669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e1bcb2427993647be74ff2b7b91b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeDamage: 20
+  AttackOffset: {x: 1.2, y: -0.18, z: 0}
+  AttackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 256
