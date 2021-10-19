@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7013129487956181013}
   - component: {fileID: -8951826414853943368}
   - component: {fileID: 564321550351934406}
+  - component: {fileID: 1800046485255252355}
   m_Layer: 0
   m_Name: Ogre_1
   m_TagString: Enemy
@@ -180,3 +181,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   isFlipped: 0
+--- !u!114 &1800046485255252355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295985202624100483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e1bcb2427993647be74ff2b7b91b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeDamage: 20
+  rateOfAttack: 2
+  AttackOffset: {x: 0.88, y: -1.23, z: 0}
+  AttackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 0
