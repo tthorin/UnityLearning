@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8951826414853943368}
   - component: {fileID: 564321550351934406}
   - component: {fileID: 1800046485255252355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ogre_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fb4c668229ac7b64d8040223ccbeaf18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  dropItem1: {fileID: 8738597778774538597, guid: c6dd8a07038c52946a3bf61f722e5d8a, type: 3}
 --- !u!114 &564321550351934406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,10 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e1bcb2427993647be74ff2b7b91b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 20
+  meleeDamage: 40
   rateOfAttack: 2
   AttackOffset: {x: 1.29, y: -1.19, z: 0}
   AttackRange: 1
   attackMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256

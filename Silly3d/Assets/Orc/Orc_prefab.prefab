@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5638639930850921671}
   - component: {fileID: 35270588780158481}
   - component: {fileID: -8653594482732004510}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Orc_prefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 37ed96a0844aa2a47b12ef58f6f83244, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  dropItem1: {fileID: 8738597778774538597, guid: c6dd8a07038c52946a3bf61f722e5d8a, type: 3}
 --- !u!58 &5638639930850921671
 CircleCollider2D:
   m_ObjectHideFlags: 0

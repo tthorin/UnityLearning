@@ -30,15 +30,12 @@ public class shot : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Enemy enemy = collision.GetComponent<Enemy>();
-        Debug.Log(collision.gameObject);
         if (enemy != null)
         {
-            Debug.Log(enemy);
             enemy.TakeDamage(damage);
         }
         Instantiate(impact, transform.position, transform.rotation);
         Destroy(gameObject);
-
     }
 
 
