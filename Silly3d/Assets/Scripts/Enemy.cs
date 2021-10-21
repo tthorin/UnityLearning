@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,13 +6,18 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     Animator animator;
     bool IsDead = false;
-    float decayTime = 10f;
+    float decayTime = 3f;
     float timeToVanish = 0f;
     public GameObject dropItem1;
+    public int XpValue = 1;
+    int playerLevel;
 
+    
     // Start is called before the first frame update
     private void Start()
     {
+        playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>().Level;
+        health *= playerLevel;
         animator = GetComponent<Animator>();
     }
     private void FixedUpdate()
@@ -39,7 +42,8 @@ public class Enemy : MonoBehaviour
         animator.SetBool("IsDead", IsDead);
         gameObject.layer = LayerMask.NameToLayer("Dead");
         timeToVanish = Time.time + decayTime;
-        int dropChance = UnityEngine.Random.Range(1, 4);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>().GetXp(XpValue);
+        int dropChance = Random.Range(1, 4);
         if (dropChance == 3)
         {
             Debug.Log("Yay looT!");
@@ -47,6 +51,6 @@ public class Enemy : MonoBehaviour
             drop.transform.position = transform.position;
             drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 300f));
         }
-        this.enabled = false;
+        
     }
 }

@@ -1,26 +1,54 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerStatus : MonoBehaviour
 {
     public int maxHealth = 200;
     public int currentHealth;
     public bool IsDead = false;
     public HealthBar healthbar;
+    public XpBar xpbar;
+    
+    public int Xp = 0;
+    public int XpToNextLevel = 300;
+    public int Level = 1;
 
     Animator animator;
     PlayerMovement mover;
 
 
     private void Awake()
-    {
+    {   
+        xpbar.SetMaxXp(XpToNextLevel);
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         mover = GetComponent<PlayerMovement>();
         healthbar.SetMaxHealth(maxHealth);
     }
 
+    public void GetXp(int xp)
+    {
+        Xp += xp;
+        xpbar.SetXp(Xp);
+        if (Xp >= XpToNextLevel) LevelUp();
+    }
+
+    private void LevelUp()
+    {
+        Level++;
+
+        maxHealth += 100;
+        currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
+        healthbar.SetHealth(currentHealth);
+
+        XpToNextLevel *= 2;
+        Xp = 0;
+        xpbar.SetXp(Xp);
+        xpbar.SetMaxXp(XpToNextLevel);
+    }
 
     public void GetHealed(int heal)
     {

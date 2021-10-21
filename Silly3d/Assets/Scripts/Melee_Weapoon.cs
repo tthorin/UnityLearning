@@ -24,7 +24,7 @@ public class Melee_Weapoon : MonoBehaviour
             Collider2D colInfo = Physics2D.OverlapCircle(pos, AttackRange, attackMask);
             if (colInfo != null)
             {
-                colInfo.GetComponent<PlayerHealth>().TakeDamage(meleeDamage);
+                colInfo.GetComponent<PlayerStatus>().TakeDamage(meleeDamage);
             }
             nextAttack = Time.time + 1f / rateOfAttack;
         }
