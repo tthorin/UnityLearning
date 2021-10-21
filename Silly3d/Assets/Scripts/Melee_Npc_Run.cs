@@ -12,12 +12,12 @@ public class Melee_Npc_Run : StateMachineBehaviour
     Transform player;
     Rigidbody2D rb;
     Npc_Behaviour orc;
-    PlayerHealth playerHealth;
+    PlayerStatus playerHealth;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         orc = animator.GetComponent<Npc_Behaviour>();

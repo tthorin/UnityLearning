@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Orc_spawner : MonoBehaviour
@@ -8,7 +6,8 @@ public class Orc_spawner : MonoBehaviour
     float timeForNextSpawn = 0;
     Vector3 pos;
     public GameObject MobToSpawn;
-    
+    public GameObject MobToSpawn2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +19,12 @@ public class Orc_spawner : MonoBehaviour
     {
         if (Time.time > timeForNextSpawn)
         {
-            GameObject orc = Instantiate(MobToSpawn);
-            orc.transform.position = pos;
+            int random = Random.Range(1, 4);
+            GameObject mob;
+            if (random < 3) mob = MobToSpawn;
+            else mob = MobToSpawn2;
+            mob = Instantiate(mob);
+            mob.transform.position = pos;
             timeForNextSpawn = Time.time + spawnFrequency;
         }
     }
